@@ -1,3 +1,5 @@
+import pytest
+from selenium import webdriver
 
 
 class BasePage():
@@ -7,6 +9,3 @@ class BasePage():
 
     def open(self):
         self.browser.get(self.link)
-
-
-
