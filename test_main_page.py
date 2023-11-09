@@ -12,10 +12,17 @@ class TestMainPage():
     def test_guest_can_go_to_login_page(self, browser):
         page = MainPage(browser, link)
         page.open()
-        page.test_go_to_login_page()
+        page.go_to_login_page()
 
     def test_go_to_login_page(self, browser):
         browser.get(link)
         login_link = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "#login_link")))
         login_link.click()
+
+    def test_guest_should_see_login_link(self, browser):
+        browser.get(link)
+        page = MainPage(browser, link)
+        page.open()
+        page.should_be_login_link()
+
 
