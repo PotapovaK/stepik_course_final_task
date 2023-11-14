@@ -2,10 +2,10 @@ from selenium.common.exceptions import NoSuchElementException
 
 
 class BasePage():
-    def __init__(self, browser, link, timeout=10):
+
+    def __init__(self, browser, link):
         self.browser = browser
         self.link = link
-        self.browser.implicitly_wait(timeout)
 
     def open(self):
         self.browser.get(self.link)
